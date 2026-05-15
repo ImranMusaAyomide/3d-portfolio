@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex Chen — Frontend Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- CUSTOM CURSOR -->
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- SCROLL PROGRESS BAR -->
+  <div id="progress"></div>
+
+  <!-- 
+       NAVIGATION
+   -->
+  <nav>
+    <div class="nav-logo">alex<span>.chen</span></div>
+    <ul class="nav-links">
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#terminal-section">Terminal</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <div class="nav-status">
+        <div class="status-dot"></div>
+        available for work
+      </div>
+      <div class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">
+        <div class="theme-thumb"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!--
+       HERO
+  -->
+  <section id="hero">
+    <div class="grid-bg"></div>
+    <div class="grid-glow"></div>
+    <div class="hero-grid">
+
+      <!-- Left: Text Content -->
+      <div class="hero-content">
+        <div class="hero-eyebrow">Frontend Engineer</div>
+        <h1 class="hero-name">Alex<br><span class="accent">Chen</span></h1>
+        <p class="hero-title">
+          I craft <span class="highlight">immersive web experiences</span> at the intersection
+          of engineering and design — with Svelte, TypeScript, and obsessive attention to performance.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Projects →</a>
+          <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+          <a href="#" class="btn btn-ghost" onclick="downloadResume(event)">↓ Resume</a>
+        </div>
+        <div class="hero-social">
+          <a href="#" class="social-link">GitHub</a>
+          <a href="#" class="social-link">LinkedIn</a>
+          <a href="#" class="social-link">Twitter</a>
+          <a href="#" class="social-link">Dribbble</a>
+        </div>
+      </div>
+
+      <!-- Right: Terminal Visual -->
+      <div class="terminal-wrap">
+        <div class="terminal">
+          <div class="terminal-bar">
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <span class="terminal-title">alex@portfolio:~</span>
+          </div>
+          <div class="terminal-body" id="terminalBody">
+            <div><span class="t-prompt">alex@portfolio</span>:<span class="t-cmd">~</span>$ <span class="t-cmd">cat profile.json</span></div>
+            <div class="t-output">{</div>
+            <div class="t-output">&nbsp;&nbsp;<span class="t-key">"name"</span>: <span class="t-string">"Alex Chen"</span>,</div>
+            <div class="t-output">&nbsp;&nbsp;<span class="t-key">"role"</span>: <span class="t-string">"Frontend Engineer"</span>,</div>
+            <div class="t-output">&nbsp;&nbsp;<span class="t-key">"experience"</span>: <span class="t-val">6</span>,</div>
+            <div class="t-output">&nbsp;&nbsp;<span class="t-key">"stack"</span>: [</div>
+            <div class="t-output">&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-string">"Svelte"</span>, <span class="t-string">"TypeScript"</span>,</div>
+            <div class="t-output">&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-string">"WebGL"</span>, <span class="t-string">"Rust/WASM"</span></div>
+            <div class="t-output">&nbsp;&nbsp;],</div>
+            <div class="t-output">&nbsp;&nbsp;<span class="t-key">"passion"</span>: <span class="t-string">"crafting the web"</span>,</div>
+            <div class="t-output">&nbsp;&nbsp;<span class="t-key">"coffee"</span>: <span class="t-val">true</span></div>
+            <div class="t-output">}</div>
+            <div style="margin-top:0.5rem">
+              <span class="t-prompt">alex@portfolio</span>:<span class="t-cmd">~</span>$ <span class="t-cursor"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 
+       SKILLS
+   -->
+  <section id="skills">
+    <div class="section-label">Skills &amp; Expertise</div>
+    <h2 class="section-title reveal">What I Build With</h2>
+    <div class="skills-grid reveal reveal-delay-1">
+
+      <div class="skill-card">
+        <div class="skill-icon">⚡</div>
+        <div class="skill-name">Frontend Frameworks</div>
+        <div class="skill-tags">
+          <span class="tag">Svelte/Kit</span>
+          <span class="tag">React</span>
+          <span class="tag">Vue 3</span>
+          <span class="tag">Astro</span>
+          <span class="tag">TypeScript</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">🎨</div>
+        <div class="skill-name">Animation &amp; Motion</div>
+        <div class="skill-tags">
+          <span class="tag purple">GSAP</span>
+          <span class="tag purple">Motion One</span>
+          <span class="tag purple">Framer</span>
+          <span class="tag purple">CSS Transitions</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">🌐</div>
+        <div class="skill-name">3D &amp; WebGL</div>
+        <div class="skill-tags">
+          <span class="tag green">Three.js</span>
+          <span class="tag green">R3F</span>
+          <span class="tag green">WebGPU</span>
+          <span class="tag green">GLSL</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">🚀</div>
+        <div class="skill-name">Performance &amp; DX</div>
+        <div class="skill-tags">
+          <span class="tag amber">Vite</span>
+          <span class="tag amber">Turborepo</span>
+          <span class="tag amber">Rust/WASM</span>
+          <span class="tag amber">Lighthouse</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 
+       PROJECTS
+   -->
+  <section id="projects">
+    <div class="section-label">Featured Work</div>
+    <h2 class="section-title reveal">Selected Projects</h2>
+
+    <div class="filter-tabs reveal reveal-delay-1">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="app">Apps</button>
+      <button class="filter-btn" data-filter="tool">Tools</button>
+      <button class="filter-btn" data-filter="viz">Visualization</button>
+      <button class="filter-btn" data-filter="game">Games</button>
+    </div>
+
+    <div class="projects-grid reveal reveal-delay-2" id="projectsGrid">
+
+      <!-- Project 01 -->
+      <div class="project-card" data-category="app">
+        <div class="project-thumb">
+          <div class="project-thumb-art">
+            <svg viewBox="0 0 320 180" width="320" height="180" xmlns="http://www.w3.org/2000/svg">
+              <rect width="320" height="180" fill="#131920"/>
+              <rect x="20" y="20" width="280" height="40" rx="4" fill="rgba(99,179,237,0.08)" stroke="rgba(99,179,237,0.2)" stroke-width="1"/>
+              <rect x="30" y="30" width="80" height="20" rx="3" fill="rgba(99,179,237,0.15)"/>
+              <rect x="20" y="72" width="136" height="88" rx="4" fill="rgba(99,179,237,0.05)" stroke="rgba(99,179,237,0.15)" stroke-width="1"/>
+              <rect x="30" y="82" width="60" height="8" rx="2" fill="rgba(99,179,237,0.2)"/>
+              <rect x="30" y="96" width="100" height="6" rx="2" fill="rgba(255,255,255,0.08)"/>
+              <rect x="30" y="108" width="80" height="6" rx="2" fill="rgba(255,255,255,0.06)"/>
+              <rect x="30" y="120" width="90" height="6" rx="2" fill="rgba(255,255,255,0.06)"/>
+              <rect x="164" y="72" width="136" height="88" rx="4" fill="rgba(104,211,145,0.05)" stroke="rgba(104,211,145,0.15)" stroke-width="1"/>
+              <circle cx="232" cy="110" r="30" fill="none" stroke="rgba(104,211,145,0.2)" stroke-width="8"/>
+              <path d="M218 110 A14 14 0 0 1 232 96" stroke="rgba(104,211,145,0.8)" stroke-width="8" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span class="project-type-badge badge-app">App</span>
+        </div>
+        <div class="project-body">
+          <div class="project-number">01</div>
+          <div class="project-title">Velocity Dashboard</div>
+          <div class="project-desc">Real-time analytics platform for SaaS teams. Sub-50ms render times with Svelte stores and virtual DOM-free architecture.</div>
+          <div class="project-stack">
+            <span class="stack-chip">SvelteKit</span>
+            <span class="stack-chip">TypeScript</span>
+            <span class="stack-chip">D3.js</span>
+            <span class="stack-chip">WebSockets</span>
+            <span class="stack-chip">TailwindCSS</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              Live Demo
+            </a>
+            <a href="#" class="project-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 02 -->
+      <div class="project-card" data-category="viz">
+        <div class="project-thumb">
+          <div class="project-thumb-art">
+            <svg viewBox="0 0 320 180" width="320" height="180" xmlns="http://www.w3.org/2000/svg">
+              <rect width="320" height="180" fill="#131920"/>
+              <circle cx="160" cy="90" r="70" fill="none" stroke="rgba(183,148,244,0.1)" stroke-width="1"/>
+              <circle cx="160" cy="90" r="50" fill="none" stroke="rgba(183,148,244,0.15)" stroke-width="1"/>
+              <circle cx="160" cy="90" r="30" fill="rgba(183,148,244,0.1)" stroke="rgba(183,148,244,0.3)" stroke-width="1"/>
+              <circle cx="160" cy="90" r="8" fill="rgba(183,148,244,0.6)"/>
+              <circle cx="216" cy="60" r="14" fill="rgba(99,179,237,0.3)" stroke="rgba(99,179,237,0.5)" stroke-width="1"/>
+              <circle cx="108" cy="130" r="10" fill="rgba(104,211,145,0.3)" stroke="rgba(104,211,145,0.5)" stroke-width="1"/>
+              <circle cx="195" cy="135" r="7" fill="rgba(246,173,85,0.3)" stroke="rgba(246,173,85,0.5)" stroke-width="1"/>
+              <circle cx="125" cy="55" r="18" fill="rgba(252,129,129,0.3)" stroke="rgba(252,129,129,0.5)" stroke-width="1"/>
+              <line x1="160" y1="90" x2="216" y2="60" stroke="rgba(183,148,244,0.3)" stroke-width="1"/>
+              <line x1="160" y1="90" x2="108" y2="130" stroke="rgba(183,148,244,0.3)" stroke-width="1"/>
+              <line x1="160" y1="90" x2="125" y2="55" stroke="rgba(183,148,244,0.3)" stroke-width="1"/>
+            </svg>
+          </div>
+          <span class="project-type-badge badge-viz">Visualization</span>
+        </div>
+        <div class="project-body">
+          <div class="project-number">02</div>
+          <div class="project-title">Cosmos Graph Explorer</div>
+          <div class="project-desc">Interactive force-directed knowledge graph for exploring complex data relationships. Handles 50k+ nodes with smooth 60fps animations.</div>
+          <div class="project-stack">
+            <span class="stack-chip">Svelte</span>
+            <span class="stack-chip">WebGL</span>
+            <span class="stack-chip">D3-Force</span>
+            <span class="stack-chip">WASM</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg> Live Demo</a>
+            <a href="#" class="project-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg> GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 03 -->
+      <div class="project-card" data-category="tool">
+        <div class="project-thumb">
+          <div class="project-thumb-art">
+            <svg viewBox="0 0 320 180" width="320" height="180" xmlns="http://www.w3.org/2000/svg">
+              <rect width="320" height="180" fill="#0d1117"/>
+              <rect x="20" y="15" width="280" height="30" rx="3" fill="rgba(104,211,145,0.05)" stroke="rgba(104,211,145,0.15)" stroke-width="1"/>
+              <text x="32" y="34" font-family="monospace" font-size="11" fill="rgba(104,211,145,0.7)">$ svelte-morph --watch src/</text>
+              <rect x="20" y="52" width="280" height="110" rx="3" fill="rgba(0,0,0,0.3)" stroke="rgba(104,211,145,0.12)" stroke-width="1"/>
+              <text x="32" y="70" font-family="monospace" font-size="9" fill="rgba(104,211,145,0.5)">✓ Component: Hero.svelte — 2.1kb</text>
+              <text x="32" y="84" font-family="monospace" font-size="9" fill="rgba(104,211,145,0.5)">✓ Component: Nav.svelte — 1.4kb</text>
+              <text x="32" y="98" font-family="monospace" font-size="9" fill="rgba(246,173,85,0.6)">⚠ Bundle size: 42.3kb (gzip: 14.1kb)</text>
+              <text x="32" y="112" font-family="monospace" font-size="9" fill="rgba(99,179,237,0.7)">ℹ Lighthouse score: 98 / 100</text>
+              <text x="32" y="126" font-family="monospace" font-size="9" fill="rgba(99,179,237,0.7)">ℹ FCP: 0.4s  LCP: 0.9s  CLS: 0.00</text>
+              <rect x="32" y="138" width="8" height="14" rx="1" fill="rgba(104,211,145,0.8)"/>
+            </svg>
+          </div>
+          <span class="project-type-badge badge-tool">Tool</span>
+        </div>
+        <div class="project-body">
+          <div class="project-number">03</div>
+          <div class="project-title">svelte-morph CLI</div>
+          <div class="project-desc">A developer tool that analyzes Svelte projects for performance bottlenecks, bundle size regressions, and a11y violations in real-time.</div>
+          <div class="project-stack">
+            <span class="stack-chip">Node.js</span>
+            <span class="stack-chip">TypeScript</span>
+            <span class="stack-chip">Rollup</span>
+            <span class="stack-chip">Playwright</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg> npm</a>
+            <a href="#" class="project-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg> GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 04 -->
+      <div class="project-card" data-category="game">
+        <div class="project-thumb">
+          <div class="project-thumb-art">
+            <svg viewBox="0 0 320 180" width="320" height="180" xmlns="http://www.w3.org/2000/svg">
+              <rect width="320" height="180" fill="#0a0a14"/>
+              <rect x="60" y="40" width="200" height="100" rx="6" fill="rgba(246,173,85,0.05)" stroke="rgba(246,173,85,0.2)" stroke-width="1"/>
+              <rect x="75" y="55" width="40" height="70" rx="3" fill="rgba(246,173,85,0.15)"/>
+              <rect x="125" y="70" width="30" height="40" rx="3" fill="rgba(252,129,129,0.15)"/>
+              <rect x="165" y="80" width="25" height="35" rx="3" fill="rgba(99,179,237,0.15)"/>
+              <rect x="200" y="60" width="45" height="75" rx="3" fill="rgba(104,211,145,0.15)"/>
+              <line x1="60" y1="140" x2="260" y2="140" stroke="rgba(246,173,85,0.3)" stroke-width="1"/>
+              <circle cx="240" cy="60" r="5" fill="rgba(246,173,85,0.6)"/>
+              <path d="M235 55 L240 45 L245 55" fill="none" stroke="rgba(246,173,85,0.5)" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="project-type-badge badge-game">Game</span>
+        </div>
+        <div class="project-body">
+          <div class="project-number">04</div>
+          <div class="project-title">Stack Attack</div>
+          <div class="project-desc">A browser-based puzzle game exploring reactive state patterns. Built entirely with Svelte stores — no canvas, pure DOM animation.</div>
+          <div class="project-stack">
+            <span class="stack-chip">Svelte</span>
+            <span class="stack-chip">Stores</span>
+            <span class="stack-chip">CSS Houdini</span>
+            <span class="stack-chip">Web Audio</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg> Play Now</a>
+            <a href="#" class="project-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg> GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 05 -->
+      <div class="project-card" data-category="app">
+        <div class="project-thumb">
+          <div class="project-thumb-art">
+            <svg viewBox="0 0 320 180" width="320" height="180" xmlns="http://www.w3.org/2000/svg">
+              <rect width="320" height="180" fill="#131920"/>
+              <rect x="20" y="20" width="130" height="140" rx="6" fill="rgba(99,179,237,0.05)" stroke="rgba(99,179,237,0.15)" stroke-width="1"/>
+              <rect x="30" y="30" width="110" height="60" rx="3" fill="rgba(99,179,237,0.1)"/>
+              <rect x="30" y="98" width="80" height="8" rx="2" fill="rgba(99,179,237,0.2)"/>
+              <rect x="30" y="112" width="100" height="6" rx="2" fill="rgba(255,255,255,0.08)"/>
+              <rect x="30" y="122" width="70" height="6" rx="2" fill="rgba(255,255,255,0.06)"/>
+              <rect x="30" y="140" width="50" height="10" rx="2" fill="rgba(104,211,145,0.2)"/>
+              <rect x="162" y="20" width="138" height="65" rx="6" fill="rgba(183,148,244,0.05)" stroke="rgba(183,148,244,0.15)" stroke-width="1"/>
+              <rect x="172" y="30" width="118" height="45" rx="3" fill="rgba(183,148,244,0.08)"/>
+              <rect x="162" y="95" width="138" height="65" rx="6" fill="rgba(104,211,145,0.05)" stroke="rgba(104,211,145,0.15)" stroke-width="1"/>
+              <rect x="172" y="105" width="118" height="45" rx="3" fill="rgba(104,211,145,0.08)"/>
+            </svg>
+          </div>
+          <span class="project-type-badge badge-app">App</span>
+        </div>
+        <div class="project-body">
+          <div class="project-number">05</div>
+          <div class="project-title">Moodboard OS</div>
+          <div class="project-desc">A drag-and-drop creative workspace with spatial canvas, real-time collaboration, and AI-powered style suggestions.</div>
+          <div class="project-stack">
+            <span class="stack-chip">SvelteKit</span>
+            <span class="stack-chip">Yjs CRDT</span>
+            <span class="stack-chip">WebRTC</span>
+            <span class="stack-chip">OpenAI</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg> Live Demo</a>
+            <a href="#" class="project-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg> GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 06 -->
+      <div class="project-card" data-category="viz">
+        <div class="project-thumb">
+          <div class="project-thumb-art">
+            <svg viewBox="0 0 320 180" width="320" height="180" xmlns="http://www.w3.org/2000/svg">
+              <rect width="320" height="180" fill="#0a0e14"/>
+              <path d="M40 140 C80 100 120 120 160 80 C200 40 240 60 280 30" fill="none" stroke="rgba(104,211,145,0.6)" stroke-width="2"/>
+              <path d="M40 150 C80 130 120 140 160 110 C200 80 240 100 280 70" fill="none" stroke="rgba(99,179,237,0.4)" stroke-width="1.5"/>
+              <circle cx="160" cy="80" r="5" fill="rgba(104,211,145,0.8)"/>
+              <line x1="160" y1="80" x2="160" y2="150" stroke="rgba(104,211,145,0.2)" stroke-width="1" stroke-dasharray="3,3"/>
+              <rect x="170" y="65" width="80" height="30" rx="3" fill="rgba(0,0,0,0.6)" stroke="rgba(104,211,145,0.3)" stroke-width="1"/>
+              <text x="180" y="82" font-family="monospace" font-size="9" fill="rgba(104,211,145,0.9)">+24.5% — Apr</text>
+              <line x1="40" y1="155" x2="280" y2="155" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+              <line x1="40" y1="30" x2="40" y2="155" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            </svg>
+          </div>
+          <span class="project-type-badge badge-viz">Visualization</span>
+        </div>
+        <div class="project-body">
+          <div class="project-number">06</div>
+          <div class="project-title">Financ/io Charts</div>
+          <div class="project-desc">High-performance financial charting library for Svelte. GPU-accelerated rendering for millions of data points with zero jank.</div>
+          <div class="project-stack">
+            <span class="stack-chip">Svelte</span>
+            <span class="stack-chip">WebGL2</span>
+            <span class="stack-chip">GLSL</span>
+            <span class="stack-chip">TypeScript</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg> Docs</a>
+            <a href="#" class="project-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg> GitHub</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 
+       INTERACTIVE TERMINAL
+   -->
+  <section id="terminal-section">
+    <div class="section-label">Interactive Terminal</div>
+    <h2 class="section-title reveal">Ask Me Anything</h2>
+    <p class="reveal reveal-delay-1" style="font-size:0.8rem;color:var(--text2);margin-bottom:2rem;max-width:50ch;">
+      Type a command below or click a suggestion. This is a real interactive terminal — not a demo.
+    </p>
+    <div class="interactive-terminal reveal reveal-delay-2">
+      <div class="it-bar">
+        <div class="terminal-dot" style="background:#ff5f56"></div>
+        <div class="terminal-dot" style="background:#ffbd2e"></div>
+        <div class="terminal-dot" style="background:#27c93f"></div>
+        <span class="it-path">~/alex-portfolio — bash</span>
+      </div>
+      <div class="it-body" id="itBody">
+        <div class="it-line" style="color:var(--text3)">Welcome to alex@portfolio interactive terminal</div>
+        <div class="it-line" style="color:var(--text3)">Type <span style="color:var(--accent)">help</span> to see available commands.</div>
+        <div class="it-line">&nbsp;</div>
+      </div>
+      <div class="it-input-row">
+        <span class="it-prompt-label">alex@portfolio:~$</span>
+        <input type="text" class="it-input" id="itInput" placeholder="type a command..." autocomplete="off" spellcheck="false">
+      </div>
+      <div class="cmd-suggestions">
+        <span class="cmd-pill" onclick="runCmd('help')">help</span>
+        <span class="cmd-pill" onclick="runCmd('about')">about</span>
+        <span class="cmd-pill" onclick="runCmd('skills')">skills</span>
+        <span class="cmd-pill" onclick="runCmd('experience')">experience</span>
+        <span class="cmd-pill" onclick="runCmd('contact')">contact</span>
+        <span class="cmd-pill" onclick="runCmd('stack')">stack</span>
+        <span class="cmd-pill" onclick="runCmd('fun')">fun</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 
+       ABOUT
+   -->
+  <section id="about">
+    <div class="section-label">About Me</div>
+    <h2 class="section-title reveal">The Human Behind the Code</h2>
+    <div class="about-grid">
+      <div class="about-text reveal reveal-delay-1">
+        <p>I'm a <span class="hl">frontend engineer with 6 years of experience</span> building products that live at the intersection of engineering precision and design craft. I believe the web is the world's most powerful creative medium — and I treat it like one.</p>
+        <p>My specialty is <span class="hl">Svelte and SvelteKit</span> — I love its reactivity model and how it gets out of my way. I've shipped production apps serving millions of users, contributed to open source, and obsessed over every millisecond of render time.</p>
+        <p>When I'm not coding, I'm exploring <span class="hl">generative art, 3D graphics</span>, and finding ways to push the browser further than it was designed to go.</p>
+        <div style="margin-top:2rem;">
+          <a href="#contact" class="btn btn-primary" style="display:inline-flex;">Let's Build Something →</a>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-num">6</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">40+</div>
+            <div class="stat-label">Projects Shipped</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">12</div>
+            <div class="stat-label">OSS Packages</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">98</div>
+            <div class="stat-label">Avg Lighthouse</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────
+       CONTACT
+  ───────────────────────────────────────── -->
+  <section id="contact">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title reveal">Let's Work Together</h2>
+    <div class="contact-grid">
+      <div class="reveal reveal-delay-1">
+        <p style="font-size:0.82rem;color:var(--text2);line-height:1.9;margin-bottom:1.5rem;">
+          I'm currently open to <span style="color:var(--text)">full-time roles</span> and
+          <span style="color:var(--text)">freelance projects</span>. If you have an exciting
+          product to build or a team that values craft — I want to hear about it.
+        </p>
+        <div class="contact-item">
+          <span class="contact-item-icon">✉</span>
+          alex.chen@email.com
+        </div>
+        <div class="contact-item">
+          <span class="contact-item-icon">📍</span>
+          San Francisco, CA (Remote-friendly)
+        </div>
+        <div class="contact-item">
+          <span class="contact-item-icon">⏱</span>
+          Response within 24 hours
+        </div>
+        <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+          <a href="#" class="btn btn-ghost" style="font-size:0.7rem">GitHub ↗</a>
+          <a href="#" class="btn btn-ghost" style="font-size:0.7rem">LinkedIn ↗</a>
+          <a href="#" class="btn btn-ghost" style="font-size:0.7rem">Twitter ↗</a>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-input" placeholder="Your name" id="fname">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-input" placeholder="your@email.com" id="femail">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Subject</label>
+            <input type="text" class="form-input" placeholder="What's this about?" id="fsubject">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea class="form-textarea" placeholder="Tell me about your project..." id="fmsg"></textarea>
+          </div>
+          <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
+            <button class="form-submit" onclick="handleSubmit()">Send Message →</button>
+            <div class="form-msg" id="formMsg">
+              <span style="color:var(--green)">✓</span> Message sent! I'll respond within 24h.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────
+       FOOTER
+  ───────────────────────────────────────── -->
+  <footer>
+    <div class="footer-text">Designed &amp; built by <span>Alex Chen</span> · 2025 · All rights reserved</div>
+    <div class="footer-text">Built with <span>Svelte</span> · Deployed on <span>Vercel</span></div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
