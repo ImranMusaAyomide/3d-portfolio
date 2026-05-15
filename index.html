@@ -4,8 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alex Chen — Frontend Engineer</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.svg" sizes="any">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <meta name="theme-color" content="#080a0e">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -110,7 +115,7 @@
     <div class="skills-grid reveal reveal-delay-1">
 
       <div class="skill-card">
-        <div class="skill-icon">⚡</div>
+        <motion class="skill-icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></motion>
         <div class="skill-name">Frontend Frameworks</div>
         <div class="skill-tags">
           <span class="tag">Svelte/Kit</span>
@@ -122,7 +127,7 @@
       </div>
 
       <div class="skill-card">
-        <div class="skill-icon">🎨</div>
+        <div class="skill-icon"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></div>
         <div class="skill-name">Animation &amp; Motion</div>
         <div class="skill-tags">
           <span class="tag purple">GSAP</span>
@@ -133,7 +138,7 @@
       </div>
 
       <div class="skill-card">
-        <div class="skill-icon">🌐</div>
+        <div class="skill-icon"><i class="fa-solid fa-cube" aria-hidden="true"></i></div>
         <div class="skill-name">3D &amp; WebGL</div>
         <div class="skill-tags">
           <span class="tag green">Three.js</span>
@@ -477,9 +482,9 @@
     </div>
   </section>
 
-  <!-- ─────────────────────────────────────────
+  <!-- 
        CONTACT
-  ───────────────────────────────────────── -->
+   -->
   <section id="contact">
     <div class="section-label">Get In Touch</div>
     <h2 class="section-title reveal">Let's Work Together</h2>
@@ -539,10 +544,11 @@
     </div>
   </section>
 
-  <!-- ─────────────────────────────────────────
+  <!-- 
        FOOTER
-  ───────────────────────────────────────── -->
-  <footer>
+   -->
+
+   <footer>
     <div class="footer-text">Designed &amp; built by <span>Alex Chen</span> · 2025 · All rights reserved</div>
     <div class="footer-text">Built with <span>Svelte</span> · Deployed on <span>Vercel</span></div>
   </footer>

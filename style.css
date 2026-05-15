@@ -534,7 +534,13 @@ section {
 .skill-icon {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  line-height: 1;
 }
+
+.skill-card:nth-child(1) .skill-icon { color: var(--accent); }
+.skill-card:nth-child(2) .skill-icon { color: var(--purple); }
+.skill-card:nth-child(3) .skill-icon { color: var(--green); }
+.skill-card:nth-child(4) .skill-icon { color: var(--amber); }
 
 .skill-name {
   font-family: var(--sans);
